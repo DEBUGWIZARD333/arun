@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>grid</title>
+    <style>
+        .parent{
+            display: grid;
+            grid-template-columns: 100px 100px 100px
+            100px;
+            grid-template-rows: 100px 100px 100px;
+            gap: 15px;
+        }
+        .child{
+            background-color: aqua;
+            color: red;
+            padding: 25px;
+        }
+        .child-3{
+            grid-column-start:3;
+            grid-column-end:4;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+    </style>
+</head>
+<body>
+<div class="parent">
+    <span class="child child-1">1</span>   <span class="child child-2">2</span>   <span class="child child-3">3</span>   <span class="child child-4">4</span>    <span class="child child-5">5</span>   <span class="child child-6">6</span>   <span class="child child-7">7</span>   <span class="child child-8">8</span>   <span class="child child-9">9</span>
+</div>
+
+</div>    
+</body>
+</html>
