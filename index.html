@@ -1,76 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<title> my program</title>
+  <meta charset="UTF-8">
+  <title>Form Example</title>
 </head>
 <body>
-    img
-    <h1>hello kpr</h1>
-    <h2>iam arunesh</h2>
-    <h3>iam currently pursuing BCA</h3>
-    <h4>I like to play cricket</h4>
+  <form onsubmit="handleSubmit(event)">
+    <label for="name">Name:</label>
+    <input type="text" name="name" placeholder="Enter your name"><br><br>
 
-    <h5><b>ABOUT ME</b></h5>Results-driven IT professional with expertise in software development, cybersecurity, cloud computing. Skilled in designing and implementing cutting-edge technology solutions that enhance efficiency and drive business growth. Adept at programming languages, networking, database management, with a strong problem-solving mindset and a passion for innovation. Dedicated to leveraging emerging technologies to create scalable, secure, and high-performing systems. Seeking an opportunity to contribute expertise to TCS in a dynamic and collaborative environment.
+    <label for="fatherName">DEPARTMENT:</label>
+    <input type="text" name="DEPARTMENT" placeholder="Enter your DEPARTMENT name"><br><br>
 
-    </p>
-<table border="1px">
-    <thead>
-       <tr>
-        <th rowspan="2">S.NO</th>
-        <th colspan="2">NAME</th>
-        <th rowspan="2">dept</th>
-        <th rowspan="2">subject</th>
-        <th rowspan="2">marks</th>
-       </tr>
-       <tr>
-         <th>first name </th>
-         <th>last name</th>
-       </tr>
-        </thead>
-    <tbody>
-      
-       <td>1</td>
-       <td>arun</td>
-       <td>kumar</td>
-       <td>bca</td>
-       <td>c++</td>
-       <td>98</td>
-       </tbody>
-   <tbody>
-      
-       <td>2</td>
-       <td>sathish</td>
-       <td>kumar</td>
-       <td>bca</td>
-       <td>c++</td>
-       <td>94</td>
-       </tbody>
-   <tbody>
-      
-       <td>3</td>
-       <td>kavin</td>
-       <td>kumar</td>
-       <td>bca</td>
-       <td>c++</td>
-       <td>68</td>
-       </tbody>
-   <tbody>
-      
-       <td>4</td>
-       <td>praveen</td>
-       <td>kumar</td>
-       <td>bca</td>
-       <td>c++</td>
-       <td>88</td>
-       </tbody>
-   <tbody>
-      
-       <td>5</td>
-       <td>varun</td>
-       <td>kumar</td>
-       <td>bca</td>
-       <td>c++</td>
-       <td>58</td>
-       </tbody>
-  
-       
+    <label for="bloodGroup">DOB:</label>
+    <input type="text" name="DOB" placeholder="Enter your DOB"><br><br>
+
+    <label for="mobile">Mobile Number:</label>
+    <input type="text" name="mobile" placeholder="Enter your mobile number"><br><br>
+
+    <label for="address">INSTAGRAM:</label>
+    <input type="text" name="INSTAGRAM" placeholder="Enter your INSTA ID"><br><br>
+
+    <label for="email">Email:</label>
+    <input type="text" name="email" placeholder="Enter your email"><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" placeholder="Enter your password"><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="output"></div>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const output = document.getElementById('output');
+
+      const data = new FormData(form);
+      let result = "<h3>Submitted Data:</h3><ul>";
+      for (let [key, value] of data.entries()) {
+        result += `<li><strong>${key}</strong>: ${value}</li>`;
+      }
+      result += "</ul>";
+      output.innerHTML = result;
+    }
+  </script>
+</body>
+</html>
